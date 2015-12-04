@@ -27,7 +27,7 @@ This toolkit is provided and used to generate the results in the following paper
 	@article{wang2015joint,
 	  title={Joint Object and Part Segmentation using Deep Learned Potentials},
 	  author={Wang, Peng and Shen, Xiaohui and Lin, Zhe and Cohen, Scott and Price, Brian and Yuille, Alan},
-	  journal={arXiv preprint arXiv:1505.00276},
+	  journal={ICCV},
 	  year={2015}
 	}
 
