@@ -4,13 +4,16 @@ addpath('../trainval');
 
 % Intuitively mapping parts to 
 DataPath = '../trainval/';
-ImgPath = [ '../../Data/VOC/VOCdevkit/VOC2012/JPEGImages/'];
-AnnoPath = [DataPath, '/Annotations_Part/'];
+%ImgPath = [ '../../Data/VOC/VOCdevkit/VOC2012/JPEGImages/'];
+%AnnoPath = [DataPath, '/Annotations_Part/'];
+ImgPath = './example/JPEGImage/'; 
+AnnoPath = './example/Annotations/'; 
 
 cmap = VOClabelcolormap();
 pimap = part2ind_grp();    % part index mapping,  first mapping to several general structures 
 
-imgsNames = textread('./ImageSets/part_train.txt','%s\n'); 
+imgsNames = MDir(ImgPath, 'c'); 
+% imgsNames = textread('./ImageSets/part_train.txt','%s\n'); 
 imgNum = length(imgsNames); 
 
 % for certain class 
