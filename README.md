@@ -12,6 +12,8 @@ For translate the labels:
  	
 	Run $PATH/Toolkit/demo.m to check the examples of mapping the part label annotations to the evaluation part (also the instance bounding boxes). 
 
+	We also included the object localization method used in our paper if you want to use exactly the same localization for comparison (Check localizeObj_v2.m).
+
 For the labels' semantic meaning of the transfered part id map. 
 
 	Run $PATH/Toolkit/LoadPascalPart.m
@@ -33,4 +35,4 @@ This toolkit is provided and used to generate the results in the following paper
 
 Any problems,  contact pengwangpku2012@gmail.com 
 
-We will later try to release our model and code, but it might depend on the authors time. 
+We will later try to release our model and code, but it might depend on the authors' time. 
