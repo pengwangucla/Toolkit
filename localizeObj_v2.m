@@ -44,8 +44,10 @@ switch opt.type
             
             seg_str = GetStrFromMap(map);
             [bbox(ibox , :), imgSet{ibox}] = GetSubImg(img, seg_str);
-            ibox = ibox + 1; 
+            ibox = ibox + 1;
         end
+        [bbox, id] = unique(bbox, 'rows');
+        imgSet = imgSet(id);
         
     case 'inst'
         opt.instMap(opt.instMap == 255) = 0; 
