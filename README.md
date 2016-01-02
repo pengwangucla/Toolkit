@@ -24,8 +24,8 @@ For the labels' semantic meaning of the transfered part id map.
 	VOCPart.classes: the semantic class name 
 	VOCPart.classes_all: original VOC objects names. 
 
-This toolkit is provided and used to generate the results in the following paper: 
-
+This toolkit is provided and used to generate the ground truth used in the following paper: 
+	
 	@article{wang2015joint,
 	  title={Joint Object and Part Segmentation using Deep Learned Potentials},
 	  author={Wang, Peng and Shen, Xiaohui and Lin, Zhe and Cohen, Scott and Price, Brian and Yuille, Alan},
