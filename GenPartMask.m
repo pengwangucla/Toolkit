@@ -1,5 +1,5 @@
 
-function [partsMask, instbox] = GenPartMask(anno, img, pimap, objID_all, mappings)
+function [partsMask, instbox, varargout] = GenPartMask(anno, img, pimap, objID_all, mappings)
 % instbox: l top, left, down , right
     [cls_mask, inst_mask, part_mask] = mat2map(anno, img, pimap); 
     class = unique(cls_mask(:)); 
@@ -14,7 +14,10 @@ function [partsMask, instbox] = GenPartMask(anno, img, pimap, objID_all, mapping
     partsMask = Mappnig2JointLabel(cls_mask, part_mask, mappings); % map cls mask find the part slots and put the label in
     inst_mask(cls_mask == 0) = 0; 
     instbox = GetInstBox(inst_mask); 
-
+    if nargin > 2
+        varargout{1} = cls_mask;
+        varargout{2} = inst_mask;
+    end
 end
 
 function cls_mask2 = Map2ID(cls_mask, objID, id) 

@@ -29,7 +29,7 @@ for iimg = 1:imgNum
     % load annotation -- anno
     load([AnnoPath, imname, '.mat'], 'anno');
     
-    [partsMask, instbox]  = GenPartMask(anno, anno.objects(1).mask, pimap,VOCPart.obj_id, mappings);  % 
+    [partsMask, instbox, clsMask, instMask]  = GenPartMask(anno, anno.objects(1).mask, pimap,VOCPart.obj_id, mappings);  % 
     if isempty(partsMask); continue; end
     
     rectimg = DrawRectOnImage(img, instbox(:, [2,1,4,3]), 'r'); 
@@ -37,6 +37,11 @@ for iimg = 1:imgNum
     subplot_tight(1,2,2); imshow(uint8(partsMask), cmap);
     pause;
     
+    % generate sub images to localize the connected object instances in an image
+    [imgSet, bbox] = localizeObj_v2(img, struct('gtMap', clsMask, 'type', 'gt', 'instMap', instMask)); 
+    opt.NumEach = 10; opt.pages = 1; 
+    ShowImageset(imgSet,opt); 
+    pause; 
 end
 
 
