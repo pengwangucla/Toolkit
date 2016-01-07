@@ -2,6 +2,7 @@ function bbox = region2box(mask, varargin)
 
 opt.padding = 0; 
 opt = CatVarargin(opt, varargin);
+
 if min(size(mask)) == 1
     mask2 = false(opt.sz);
     mask2(mask) = 1;

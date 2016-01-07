@@ -1,6 +1,6 @@
 
 % wget the toolkit from pascal Part dataset add the corresponding functions
-% addpath('../trainval'); 
+addpath(genpath('./')); 
 
 % Intuitively mapping parts to 
 ImgPath = './example/JPEGImage/'; 
